@@ -1,10 +1,11 @@
 {
-  "name": "ionic-datepicker",
+  "name": "ionic-datepicker-fork-ionic1",
   "version": "1.2.1",
   "authors": [
-    "rajeshwarpatlolla <rajeshwar.patlolla@gmail.com>"
+    "rajeshwarpatlolla <rajeshwar.patlolla@gmail.com>",
+    "OSAMES (https://github.com/OSAMES/)"
   ],
-  "description": "A date picker for ionic framework",
+  "description": "A date picker for ionic framework, forked",
   "main": [
     "./dist/ionic-datepicker.bundle.min.js"
   ],
@@ -16,7 +17,7 @@
     "datepicker for ionic framework"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/rajeshwarpatlolla",
+  "homepage": "https://github.com/OSAMES/ionic-datepicker",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -25,6 +26,6 @@
     "tests"
   ],
   "dependencies": {
-    "ionic": ">=0.9.27"
+    "ionic": "^1"
   }
 }

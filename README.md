@@ -1,15 +1,15 @@
-[![bitHound Score](https://www.bithound.io/github/rajeshwarpatlolla/ionic-datepicker/badges/score.svg)](https://www.bithound.io/github/rajeshwarpatlolla/ionic-datepicker)
-
 ##Introduction:
 
 This is an `ionic-datepicker` bower component, which can be used in any Ionic framework's application. No additional plugins required for this component.
-This plugin is completely open source. Please rate this plugin @ [Ionic Market](http://market.ionic.io/plugins/ionicdatepicker)
+This plugin is completely open source.
 
 From version 1.0.0, this component has got so many new features and the way you should use is different from the older versions of this component. If you wish to see the documentation for the previous versions of this component, please check the [previous releases](https://github.com/rajeshwarpatlolla/ionic-datepicker/releases)
 
-## For ionic v2, this component is under development. You can check it [here](https://github.com/rajeshwarpatlolla/ionic2-datepicker)
+OSAMES' fork intends to add some features, supporting ionic v1 for now.
 
-[View Demo](http://rajeshwarpatlolla.github.io/DatePickerForIonicFramework/demo/ "Demo")
+## For ionic v2, this component is under development by the original author. You can check it [here](https://github.com/rajeshwarpatlolla/ionic2-datepicker)
+
+[View original author's Demo](http://rajeshwarpatlolla.github.io/DatePickerForIonicFramework/demo/ "Demo")
 
 ##Prerequisites.
 
