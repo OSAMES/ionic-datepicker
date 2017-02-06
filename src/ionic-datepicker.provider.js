@@ -14,7 +14,8 @@ angular.module('ionic-datepicker.provider', [])
       templateType: 'popup',
       showTodayButton: false,
       closeOnSelect: false,
-      disableWeekdays: []
+      disableWeekdays: [],
+      selectMode: 'day'
     };
 
     this.configDatePicker = function (inputObj) {
