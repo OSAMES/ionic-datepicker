@@ -66,8 +66,17 @@ angular.module('ionic-datepicker.provider', [])
       //Date selected
       $scope.dateSelected = function (selectedDate) {
         if (!selectedDate || Object.keys(selectedDate).length === 0) return;
-        // TODO #1 adjust value here (selected date is first day of week)
-        // + handle highlight by adjusting (dayList[row + $index].epoch === selctedDateEpoch) to use week dates epoch boundaries.
+        // TODO #1 test adjusted selected value with test pages
+        // TODO handle highlight by adjusting (dayList[row + $index].epoch === selctedDateEpoch) to use week dates epoch boundaries.
+          if($scope.mainObj.selectMode == 'week') {
+              var d = new Date(selectedDate.epoch);
+              if($scope.mainObj.mondayFirst) {
+                  d.setDate(d.getDate() - selectedDate.day + 1);
+              } else {
+                  d.setDate(d.getDate() - selectedDate.day);
+              }
+              selectedDate = d;
+          }
         $scope.selctedDateEpoch = selectedDate.epoch;
 
         if ($scope.mainObj.closeOnSelect) {
