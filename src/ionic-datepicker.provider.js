@@ -75,9 +75,10 @@ angular.module('ionic-datepicker.provider', [])
               } else {
                   d.setDate(d.getDate() - selectedDate.day);
               }
-              selectedDate = d;
+              selectedDate.epoch = d.getTime();
           }
-        $scope.selctedDateEpoch = selectedDate.epoch;
+          $scope.selctedDateEpoch = selectedDate.epoch;
+          console.info(selectedDate);
 
         if ($scope.mainObj.closeOnSelect) {
           $scope.mainObj.callback($scope.selctedDateEpoch);
