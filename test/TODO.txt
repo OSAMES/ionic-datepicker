@@ -1,1 +1,0 @@
-Make a basic ionic 1 projet, add some date picker to it, with several configurations (mondayFirst true/false, selectMode 'day'/'week').
