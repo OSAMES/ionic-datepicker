@@ -66,19 +66,7 @@ angular.module('ionic-datepicker.provider', [])
       //Date selected
       $scope.dateSelected = function (selectedDate) {
         if (!selectedDate || Object.keys(selectedDate).length === 0) return;
-          if($scope.mainObj.selectMode == 'week') {
-              var d = new Date(selectedDate.epoch);
-              if($scope.mainObj.mondayFirst) {
-                  d.setDate(d.getDate() - selectedDate.day + 1);
-              } else {
-                  d.setDate(d.getDate() - selectedDate.day);
-              }
-              selectedDate.epoch = d.getTime();
-              d.setDate(d.getDate() + 6);
-              $scope.selctedDateEpochEndWeek = d.getTime();
-          }
-          $scope.selctedDateEpoch = selectedDate.epoch;
-
+          $scope.adjustSelctedDateEpoch(selectedDate);
 
         if ($scope.mainObj.closeOnSelect) {
           $scope.mainObj.callback($scope.selctedDateEpoch);
@@ -106,6 +94,25 @@ angular.module('ionic-datepicker.provider', [])
         $scope.mainObj.callback($scope.selctedDateEpoch);
         closeModal();
       };
+
+      // TODO call this function when initializing selected date with today.
+      // Adjust $scope.selctedDateEpoch and $scope.selctedDateEpochEndWeek in case
+      // select mode is week, with value from param dat
+      // @param selectedDate - structure in scope
+      $scope.adjustSelctedDateEpoch = function(selectedDate) {
+          if($scope.mainObj.selectMode == 'week') {
+              var d = new Date(selectedDate.epoch);
+              if($scope.mainObj.mondayFirst) {
+                  d.setDate(d.getDate() - selectedDate.day + 1);
+              } else {
+                  d.setDate(d.getDate() - selectedDate.day);
+              }
+              selectedDate.epoch = d.getTime();
+              d.setDate(d.getDate() + 6);
+              $scope.selctedDateEpochEndWeek = d.getTime();
+          }
+          $scope.selctedDateEpoch = selectedDate.epoch;
+        };
 
       //Setting the disabled dates list.
       function setDisabledDates(mainObj) {
