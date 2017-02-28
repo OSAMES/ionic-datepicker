@@ -99,9 +99,10 @@ angular.module('ionic-datepicker.provider', [])
       // Adjust $scope.selctedDateEpoch and $scope.selctedDateEpochEndWeek in case
       // select mode is week, with value from param dat
       // @param selectedDate - an item of $scope.dayList or a Date
-      // @param isRawDate - when true, Date passed. When false, an item of $scope.dayList passed.
-      $scope.adjustSelctedDateEpoch = function(selectedDate, isRawDate) {
-        var selectedTime = isRawDate ? selectedDate.getTime() : selectedDate.epoch;
+      // @param initialSelRawDate - when true, initial selection and Date value passed.
+      // When false, event call and item of $scope.dayList passed.
+      $scope.adjustSelctedDateEpoch = function(selectedDate, initialSelRawDate) {
+        var selectedTime = initialSelRawDate ? selectedDate.getTime() : selectedDate.epoch;
           if($scope.mainObj.selectMode == 'week') {
               var d = new Date(selectedTime);
               if($scope.mainObj.mondayFirst) {
@@ -200,8 +201,8 @@ angular.module('ionic-datepicker.provider', [])
       //Setting up the initial object
       function setInitialObj(ipObj) {
         $scope.mainObj = angular.copy(ipObj);
+        $scope.mainObj.inputDate = resetHMSM($scope.mainObj.inputDate);
         $scope.adjustSelctedDateEpoch($scope.mainObj.inputDate, true);
-        $scope.selctedDateEpoch = resetHMSM($scope.mainObj.inputDate).getTime();
 
         if ($scope.mainObj.weeksList && $scope.mainObj.weeksList.length === 7) {
           $scope.weeksList = $scope.mainObj.weeksList;
