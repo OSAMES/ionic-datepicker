@@ -6,6 +6,7 @@ This plugin is completely open source.
 From version 1.0.0, this component has got so many new features and the way you should use is different from the older versions of this component. If you wish to see the documentation for the previous versions of this component, please check the [previous releases](https://github.com/rajeshwarpatlolla/ionic-datepicker/releases)
 
 OSAMES' fork intends to add some features, supporting ionic v1 for now.
+OSAMES forked from version 1.2.1, starting with first release as version 1.3.0.
 
 ## For ionic v2, this component is under development by the original author. You can check it [here](https://github.com/rajeshwarpatlolla/ionic2-datepicker)
 
@@ -154,7 +155,8 @@ The properties you can configure are as follows.
       mondayFirst: true,          //Optional
       disableWeekdays: [0],       //Optional
       closeOnSelect: false,       //Optional
-      templateType: 'popup'       //Optional
+      templateType: 'popup',      //Optional
+      selectMode: 'day'           //Optional
     };
 
     $scope.openDatePicker = function(){
