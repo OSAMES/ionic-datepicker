@@ -129,7 +129,7 @@ The properties you can configure are as follows.
 
 **p) disableWeekdays**(Optional) : Accepts array of numbers starting from 0(Sunday) to 6(Saturday). If you specify any values for this array, then it will disable that week day in the whole calendar. For example if you pass [0,6], then all the Sundays and Saturdays will be disabled.
 
-**q) selectMode**(Optional): This is a string type which takes two values i.e. `day` or `week`. Default value is `day`. If you wish the whole week to be selected rather than the day, and the first day of week to be the datepicker's value, set it to `week`.
+**q) selectMode**(Optional): This is a string type which takes two values i.e. `day`, `week` or `month`. Default value is `day`. If you wish the whole week to be selected rather than the day, and the first day of week to be the datepicker's value, set it to `week`.
 
 5) Inject `ionicDatePicker` in the controller, where you wish to use this component. Then using the below method you can call the datepicker.
 
@@ -362,6 +362,13 @@ CSS changes for popup, so that all the dates of all the months fits in the speci
 
 Version modified to match with the current release version.
 
+### 17) v1.3.0
+
+On the fork, added ability to select a week.
+
+### 18) v1.3.1
+
+Added ability to select a month.
 
 ##License:
 [MIT](https://github.com/rajeshwarpatlolla/ionic-datepicker/blob/master/LICENSE.MD "MIT")
