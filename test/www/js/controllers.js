@@ -4,154 +4,23 @@ angular.module('starter.controllers', [])
   .controller('mainController', ['$scope', 'ionicDatePicker',
     function ($scope, ionicDatePicker) {
 
-    /* Sunday first, day selection, popup */
-    $scope.openDatePickerStandard = function() {
+    $scope.options = {
+      start : "sunday",
+      style: "modal",
+      range: "day"
+    };
+
+    $scope.openDatePicker = function() {
       var ipObj1 = {
         callback: function (val) {  //Mandatory
           $scope.datepicker1 = new Date(val);
         },
-        mondayFirst: false,          //Optional
+        mondayFirst: $scope.options.start == "monday",          //Optional
         closeOnSelect: false,       //Optional
-        templateType: 'popup'       //Optional
+        templateType: $scope.options.style,       //Optional
+        selectMode: $scope.options.range
       };
 
       ionicDatePicker.openDatePicker(ipObj1);
     };
-      /* Monday first, day selection, popup */
-      $scope.openDatePickerStandardMonday = function() {
-        var ipObj1 = {
-          callback: function (val) {  //Mandatory
-            $scope.datepicker1 = new Date(val);
-          },
-          mondayFirst: true,          //Optional
-          closeOnSelect: false,       //Optional
-          templateType: 'popup'       //Optional
-        };
-
-        ionicDatePicker.openDatePicker(ipObj1);
-      };
-      /* Sunday first, day selection, modal */
-      $scope.openDatePickerStandardModal = function() {
-        var ipObj1 = {
-          callback: function (val) {  //Mandatory
-            $scope.datepicker1 = new Date(val);
-          },
-          mondayFirst: false,          //Optional
-          closeOnSelect: false,       //Optional
-          templateType: 'modal'       //Optional
-        };
-
-        ionicDatePicker.openDatePicker(ipObj1);
-      };
-      /* Monday first, day selection, modal */
-      $scope.openDatePickerStandardModalMonday = function() {
-        var ipObj1 = {
-          callback: function (val) {  //Mandatory
-            $scope.datepicker1 = new Date(val);
-          },
-          mondayFirst: true,          //Optional
-          closeOnSelect: false,       //Optional
-          templateType: 'modal'       //Optional
-        };
-
-        ionicDatePicker.openDatePicker(ipObj1);
-      };
-      /* Sunday first, week selection, popup */
-      $scope.openDatePickerWeek = function() {
-        var ipObj1 = {
-          callback: function (val) {  //Mandatory
-            $scope.datepicker2 = new Date(val);
-          },
-          mondayFirst: false,          //Optional
-          closeOnSelect: false,       //Optional
-          templateType: 'popup',       //Optional
-          selectMode: 'week'
-        };
-
-        ionicDatePicker.openDatePicker(ipObj1);
-      };
-      /* Monday first, week selection, popup */
-      $scope.openDatePickerWeekMonday = function() {
-        var ipObj1 = {
-          callback: function (val) {  //Mandatory
-            $scope.datepicker2 = new Date(val);
-          },
-          mondayFirst: true,          //Optional
-          closeOnSelect: false,       //Optional
-          templateType: 'popup',       //Optional
-          selectMode: 'week'
-        };
-
-        ionicDatePicker.openDatePicker(ipObj1);
-      };
-      /* Sunday first, week selection, modal */
-      $scope.openDatePickerWeekModal = function() {
-        var ipObj1 = {
-          callback: function (val) {  //Mandatory
-            $scope.datepicker2 = new Date(val);
-          },
-          mondayFirst: false,          //Optional
-          closeOnSelect: false,       //Optional
-          templateType: 'modal',       //Optional
-          selectMode: 'week'
-        };
-
-        ionicDatePicker.openDatePicker(ipObj1);
-      };
-      /* Sunday first, week selection, modal */
-      $scope.openDatePickerWeekModal = function() {
-        var ipObj1 = {
-          callback: function (val) {  //Mandatory
-            $scope.datepicker2 = new Date(val);
-          },
-          mondayFirst: false,          //Optional
-          closeOnSelect: false,       //Optional
-          templateType: 'modal',       //Optional
-          selectMode: 'week'
-        };
-
-        ionicDatePicker.openDatePicker(ipObj1);
-      };
-      /* Sunday first, week selection, modal */
-      $scope.openDatePickerWeekModal = function() {
-        var ipObj1 = {
-          callback: function (val) {  //Mandatory
-            $scope.datepicker2 = new Date(val);
-          },
-          mondayFirst: false,          //Optional
-          closeOnSelect: false,       //Optional
-          templateType: 'modal',       //Optional
-          selectMode: 'week'
-        };
-
-        ionicDatePicker.openDatePicker(ipObj1);
-      };
-      /* Sunday first, week selection, modal */
-      $scope.openDatePickerWeekModal = function() {
-        var ipObj1 = {
-          callback: function (val) {  //Mandatory
-            $scope.datepicker2 = new Date(val);
-          },
-          mondayFirst: false,          //Optional
-          closeOnSelect: false,       //Optional
-          templateType: 'modal',       //Optional
-          selectMode: 'week'
-        };
-
-        ionicDatePicker.openDatePicker(ipObj1);
-      };
-      /* Monday first, week selection, modal */
-      $scope.openDatePickerWeekModalMonday = function() {
-        var ipObj1 = {
-          callback: function (val) {  //Mandatory
-            $scope.datepicker2 = new Date(val);
-          },
-          mondayFirst: true,          //Optional
-          closeOnSelect: false,       //Optional
-          templateType: 'modal',       //Optional
-          selectMode: 'week'
-        };
-
-        ionicDatePicker.openDatePicker(ipObj1);
-      };
     }]);

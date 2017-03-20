@@ -35,6 +35,8 @@
     <script src="js/controllers.js"></script>
     <style type="text/css">
       input.selectedDate { width: 100%; }
+      div#options div.col25 { padding-left:50px; padding-right:50px;}
+      input[type=radio] { margin-right:5px; }
     </style>
   </head>
   <body ng-app="starter">
@@ -44,51 +46,45 @@
         <h1 class="title">Test of ionic date picker</h1>
       </ion-header-bar>
       <ion-content ng-controller="mainController">
-        <div class="row">
-          <div class="col-40">
-          <button class="button button-block button-balanced" ng-click="openDatePickerStandard()">Starts on Sunday, day selection, popup</button>
+
+        <div id="options">
+          <div class="row">
+            <div class="col25">OPTIONS
+            </div>
+            <div class="col25">Start:
+              <div class="row">
+                <input type="radio" name="start" value="sunday" ng-model="options.start">Sunday
+              </div>
+              <div class="row">
+                <input type="radio" name="start" value="monday" ng-model="options.start">Monday
+              </div>
+            </div>
+            <div class="col25">Style:
+              <div class="row">
+                <input type="radio" name="style" value="modal" ng-model="options.style">Modal
+              </div>
+              <div class="row">
+                <input type="radio" name="style" value="popup" ng-model="options.style">Popup
+              </div>
+            </div>
+            <div class="col25">Select mode:
+              <div class="row">
+                <input type="radio" name="range" value="day" ng-model="options.range">Day
+              </div>
+              <div class="row">
+                <input type="radio" name="range" value="week" ng-model="options.range">Week
+              </div>
+              <div class="row">
+                <input type="radio" name="range" value="month" ng-model="options.range">Month
+              </div>
+            </div>
+          </div>
         </div>
-          <div class="col-20">
-          </div>
-          <div class="col-40">
-            <button class="button button-block button-balanced" ng-click="openDatePickerStandardModal()">Starts on Sunday, day selection, modal</button>
-          </div>
+        <div>
+          <button class="button button-block button-balanced" ng-click="openDatePicker()">Open date picker</button>
         </div>
-        <div class="row">
-          <div class="col-40">
-            <button class="button button-block button-balanced" ng-click="openDatePickerStandardMonday()">Starts on Monday, day selection, popup</button>
-          </div>
-          <div class="col-20">
-          </div>
-          <div class="col-40">
-            <button class="button button-block button-balanced" ng-click="openDatePickerStandardModalMonday()">Starts on Monday, day selection, modal</button>
-          </div>
-        </div>
-        <div class="row">
+        <div>
           <input type="text" class="selectedDate" ng-model="datepicker1"/>
-        </div>
-        <div class="row">
-          <div class="col-40">
-            <button class="button button-block button-balanced" ng-click="openDatePickerWeek()">Starts on Sunday, week selection, popup</button>
-          </div>
-          <div class="col-20">
-          </div>
-          <div class="col-40">
-            <button class="button button-block button-balanced" ng-click="openDatePickerWeekModal()">Starts on Sunday, week selection, modal</button>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-40">
-            <button class="button button-block button-balanced" ng-click="openDatePickerWeekMonday()">Starts on Monday, week selection, popup</button>
-          </div>
-          <div class="col-20">
-          </div>
-          <div class="col-40">
-            <button class="button button-block button-balanced" ng-click="openDatePickerWeekModalMonday()">Starts on Monday, week selection, modal</button>
-          </div>
-        </div>
-        <div class="row">
-          <input type="text" class="selectedDate" ng-model="datepicker2"/>
         </div>
       </ion-content>
     </ion-pane>
