@@ -118,7 +118,7 @@ angular.module('ionic-datepicker.provider', [])
               d.setDate(1);
               selectedTime = d.getTime();
               var nbDaysInMonth = new Date(d.getYear(), d.getMonth()+1, 0).getDate();
-              d = new Date(d.getYear(), d.getMonth(), nbDaysInMonth);
+              d = new Date(d.getFullYear(), d.getMonth(), nbDaysInMonth);
               $scope.selctedDateEpochEndWeek = d.getTime();
           }
           $scope.selctedDateEpoch = selectedTime;
