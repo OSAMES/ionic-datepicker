@@ -370,6 +370,10 @@ On the fork, added ability to select a week.
 
 Added ability to select a month.
 
+### 19) v1.3.2
+
+[Bug#297](https://github.com/rajeshwarpatlolla/ionic-datepicker/issues/297)
+
 ##License:
 [MIT](https://github.com/rajeshwarpatlolla/ionic-datepicker/blob/master/LICENSE.MD "MIT")
 

@@ -45,7 +45,7 @@ angular.module('ionic-datepicker.provider', [])
         if ($scope.currentDate.getMonth() === 1) {
           $scope.currentDate.setFullYear($scope.currentDate.getFullYear());
         }
-        $scope.currentDate.setMonth($scope.currentDate.getMonth() - 1);
+        $scope.currentDate = changeMonth($scope.currentDate, $scope.currentDate.getMonth() - 1);
         $scope.data.currentMonth = $scope.mainObj.monthsList[$scope.currentDate.getMonth()];
         $scope.data.currentYear = $scope.currentDate.getFullYear();
         refreshDateList($scope.currentDate);
@@ -56,8 +56,7 @@ angular.module('ionic-datepicker.provider', [])
         if ($scope.currentDate.getMonth() === 11) {
           $scope.currentDate.setFullYear($scope.currentDate.getFullYear());
         }
-        $scope.currentDate.setDate(1);
-        $scope.currentDate.setMonth($scope.currentDate.getMonth() + 1);
+        $scope.currentDate = changeMonth($scope.currentDate, $scope.currentDate.getMonth() + 1);
         $scope.data.currentMonth = $scope.mainObj.monthsList[$scope.currentDate.getMonth()];
         $scope.data.currentYear = $scope.currentDate.getFullYear();
         refreshDateList($scope.currentDate);
@@ -122,7 +121,24 @@ angular.module('ionic-datepicker.provider', [])
               $scope.selctedDateEpochEndWeek = d.getTime();
           }
           $scope.selctedDateEpoch = selectedTime;
+          $scope.currentDate = new Date(selectedTime);
         };
+
+      function changeMonth(date, newMonth) {
+        var saveDay = date.getDate();
+        console.info("current date : ", date);
+        console.info("saved day: ", saveDay);
+        var d = new Date(date.getTime());
+        d.setMonth(newMonth);
+          console.info("new month: ", newMonth);
+          console.info("d: ", d);
+        var nbDaysNewMonth = new Date(d.getYear(), d.getMonth()+1, 0).getDate();
+        if(saveDay > nbDaysNewMonth) {
+          d.setDate(nbDaysNewMonth);
+        }
+          console.info("fixed d: ", d);
+         return d;
+      }
 
       //Setting the disabled dates list.
       function setDisabledDates(mainObj) {
@@ -195,7 +211,7 @@ angular.module('ionic-datepicker.provider', [])
       //Month changed
       $scope.monthChanged = function (month) {
         var monthNumber = $scope.monthsList.indexOf(month);
-        $scope.currentDate.setMonth(monthNumber);
+        $scope.currentDate = changeMonth($scope.currentDate, monthNumber);
         refreshDateList($scope.currentDate);
       };
 
