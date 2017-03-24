@@ -5,9 +5,10 @@ angular.module('starter.controllers', [])
     function ($scope, ionicDatePicker) {
 
     $scope.options = {
-      start : "sunday",
+      start: "sunday",
       style: "modal",
-      range: "day"
+      range: "day",
+      today: "not_today"
     };
 
     $scope.openDatePicker = function() {
@@ -16,9 +17,10 @@ angular.module('starter.controllers', [])
           $scope.datepicker1 = new Date(val);
         },
         mondayFirst: $scope.options.start == "monday",          //Optional
-        closeOnSelect: false,       //Optional
+        closeOnSelect: true,       //Optional
         templateType: $scope.options.style,       //Optional
-        selectMode: $scope.options.range
+        selectMode: $scope.options.range,
+        showTodayButton: $scope.options.today == "today" //Optional
       };
 
       ionicDatePicker.openDatePicker(ipObj1);
