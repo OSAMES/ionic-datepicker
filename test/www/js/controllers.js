@@ -8,7 +8,8 @@ angular.module('starter.controllers', [])
       start : "sunday",
       style: "modal",
       range: "day",
-      today: "not_today"
+      today: "not_today",
+      close: "do_not_close"
     };
 
     $scope.openDatePicker = function() {
@@ -17,7 +18,7 @@ angular.module('starter.controllers', [])
           $scope.datepicker1 = new Date(val);
         },
         mondayFirst: $scope.options.start == "monday",          //Optional
-        closeOnSelect: true,       //Optional
+        closeOnSelect: $scope.options.close == "close",       //Optional
         templateType: $scope.options.style,       //Optional
         selectMode: $scope.options.range, //Optional
         showTodayButton: $scope.options.today == "today" //Optional

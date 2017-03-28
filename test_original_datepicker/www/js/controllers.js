@@ -4,25 +4,26 @@ angular.module('starter.controllers', [])
   .controller('mainController', ['$scope', 'ionicDatePicker',
     function ($scope, ionicDatePicker) {
 
-    $scope.options = {
-      start: "sunday",
-      style: "modal",
-      range: "day",
-      today: "not_today"
-    };
-
-    $scope.openDatePicker = function() {
-      var ipObj1 = {
-        callback: function (val) {  //Mandatory
-          $scope.datepicker1 = new Date(val);
-        },
-        mondayFirst: $scope.options.start == "monday",          //Optional
-        closeOnSelect: true,       //Optional
-        templateType: $scope.options.style,       //Optional
-        selectMode: $scope.options.range,
-        showTodayButton: $scope.options.today == "today" //Optional
+      $scope.options = {
+        start : "sunday",
+        style: "modal",
+        range: "day",
+        today: "not_today",
+        close: "do_not_close"
       };
 
-      ionicDatePicker.openDatePicker(ipObj1);
-    };
+      $scope.openDatePicker = function() {
+        var ipObj1 = {
+          callback: function (val) {  //Mandatory
+            $scope.datepicker1 = new Date(val);
+          },
+          mondayFirst: $scope.options.start == "monday",          //Optional
+          closeOnSelect: $scope.options.close == "close",       //Optional
+          templateType: $scope.options.style,       //Optional
+          selectMode: $scope.options.range, //Optional
+          showTodayButton: $scope.options.today == "today" //Optional
+        };
+
+        ionicDatePicker.openDatePicker(ipObj1);
+      };
     }]);
