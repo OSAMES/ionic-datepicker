@@ -45,6 +45,7 @@ angular.module('ionic-datepicker.provider', [])
                 if ($scope.currentDate.getMonth() === 1) {
                     $scope.currentDate.setFullYear($scope.currentDate.getFullYear());
                 }
+                $scope.currentDate.setDate(1);
                 $scope.currentDate.setMonth($scope.currentDate.getMonth() - 1);
                 $scope.data.currentMonth = $scope.mainObj.monthsList[$scope.currentDate.getMonth()];
                 $scope.data.currentYear = $scope.currentDate.getFullYear();
