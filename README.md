@@ -3,13 +3,17 @@
 ##Introduction:
 
 This is an `ionic-datepicker` bower component, which can be used in any Ionic framework's application. No additional plugins required for this component.
-This plugin is completely open source. Please rate this plugin @ [Ionic Market](http://market.ionic.io/plugins/ionicdatepicker)
+This plugin is completely open source. 
 
-From version 1.0.0, this component has got so many new features and the way you should use is different from the older versions of this component. If you wish to see the documentation for the previous versions of this component, please check the [previous releases](https://github.com/rajeshwarpatlolla/ionic-datepicker/releases)
+OSAMES' fork intends to add some features, supporting ionic v1 for now.
+Hence the bower package name `ionic-datepicker-fork-ionic1`.
+OSAMES forked from version 1.2.1, starting with first release as version 1.3.0.
 
-## For ionic v2, this component is under development. You can check it [here](https://github.com/rajeshwarpatlolla/ionic2-datepicker)
 
-[View Demo](http://rajeshwarpatlolla.github.io/DatePickerForIonicFramework/demo/ "Demo")
+## For ionic v2, this component is under development by the original author. 
+You can check it [here](https://github.com/rajeshwarpatlolla/ionic2-datepicker)
+
+[View original author's Demo](http://rajeshwarpatlolla.github.io/DatePickerForIonicFramework/demo/ "Demo")
 
 ##Prerequisites.
 
@@ -22,17 +26,17 @@ From version 1.0.0, this component has got so many new features and the way you 
 
 1) In your project folder, please install this plugin using bower
 
-`bower install ionic-datepicker --save`
+`bower install ionic-datepicker-fork-ionic1 --save`
 
-This will install the latest version of this plugin. If you wish to install any specific version(eg : 0.9.0) then
+This will install the latest version of this plugin. If you wish to install any specific version(eg : 1.3.0) then
 
-`bower install ionic-datepicker#0.9.0 --save`
+`bower install ionic-datepicker-fork-ionic1#1.3.0 --save`
 
 2) Specify the path of  `ionic-datepicker.bundle.min.js` in your `index.html` file.
 
 ````html
 <!-- path to ionic -->
-<script src="lib/ionic-datepicker/dist/ionic-datepicker.bundle.min.js"></script>
+<script src="lib/ionic-datepicker-fork-ionic1/dist/ionic-datepicker.bundle.min.js"></script>
 ````
 
 3) In your application's main module, inject the dependency `ionic-datepicker`, in order to work with this plugin
@@ -221,152 +225,29 @@ c) For `Close` button the class name is `button_close`
 
 ##Versions:
 
-### 1) v0.1.0
-The whole date picker functionality has been implemented, and can be installed with  `bower install ionic-datepicker --save`
+### 1) v1.3.0, v1.3.1
+First releases of fork: added ability to select a week or month in addition to select a day.
 
-### 2) v0.1.1
-Bug Fix. This is the latest version of `ionic-datepicker` component.
+[Issue#1](https://github.com/OSAMES/ionic-datepicker/issues/1)
+[Issue#2](https://github.com/OSAMES/ionic-datepicker/issues/2)
 
-### 3) v0.1.2
-Bug Fix. If we don't pass the date to the time picker it will pick the todays date by default.
+### 2) v1.4.0
 
-### 4) v0.1.3
-[Bug Fix](http://forum.ionicframework.com/t/ionic-datepicker-bower-component-for-ionic-framework-applications/21516/14)
+[Issue#4](https://github.com/OSAMES/ionic-datepicker/issues/4)
+[Issue#5](https://github.com/OSAMES/ionic-datepicker/issues/5)
 
-### 5) v0.2.0
-Disabling previous dates functionality added.
-
-### 6) v0.3.0
-a) User can select the years and months using the dropdown.
-
-b) A callback function is added.
-
-### 7) v0.4.0
-
-**Features**
-
-a) Disabling future dates functionality added. You may use it for selecting DOB.
-
-b) Customised title text for datepicker modal's added.
-
-**BugFixes**
-
-[Bug#22](https://github.com/rajeshwarpatlolla/ionic-datepicker/issues/22),
-[Bug#26](https://github.com/rajeshwarpatlolla/ionic-datepicker/issues/26),
-[Bug#29](https://github.com/rajeshwarpatlolla/ionic-datepicker/issues/29)
-
-### 8) v0.5.0
-
-a) Feature for disabling particular dates has been added.
-
-b) CSS classes added for customisation.
-
-### 9) v0.6.0
-
-a) Date selection color issue fixed.
-
-b) Added feature to show Monday as the first day of the week.
-
-### 10) v0.7.0
-
-**Features**
-
-a) `from` and `to` dates functionality added.
-
-b) Code re-structuring.
-
-c) Updated node modules.
-
-**BugFixes**
-
-[Bug#58](https://github.com/rajeshwarpatlolla/ionic-datepicker/issues/58),
-[Bug#56](https://github.com/rajeshwarpatlolla/ionic-datepicker/issues/56),
-[Bug#54](https://github.com/rajeshwarpatlolla/ionic-datepicker/issues/54),
-[Bug#42](https://github.com/rajeshwarpatlolla/ionic-datepicker/issues/42),
-[Bug#37](https://github.com/rajeshwarpatlolla/ionic-datepicker/issues/37),
-[Bug#28](https://github.com/rajeshwarpatlolla/ionic-datepicker/issues/28)
-
-### 11) v0.8.0
-
-**Feature**
-
-You can use either a popup or a modal for this `ionic-datepicker`.
-
-**BugFix**
-
-[Bug#59](https://github.com/rajeshwarpatlolla/ionic-datepicker/issues/59)
-
-### 12) v0.9.0
-
-**Feature**
-
-You can give your custom week names.
-
-**BugFix**
-
-[Bug#63](https://github.com/rajeshwarpatlolla/ionic-datepicker/issues/63)
-
-### 13) v1.0.0
-
-**Features**
-
-a) You can configure the ionic-datepicker from the config method.
-
-b) You can invoke the ionic-datepicker from the controller.
-
-c) New CSS
-
-d) Disabling a particular day of the calendar.
-
-Few more features are also added apart from the above mentioned features.
-
-
-**BugFixes**
-
-[Bug#88](https://github.com/rajeshwarpatlolla/ionic-datepicker/issues/88),
-[Bug#94](https://github.com/rajeshwarpatlolla/ionic-datepicker/issues/94),
-[Bug#101](https://github.com/rajeshwarpatlolla/ionic-datepicker/issues/101),
-[Bug#112](https://github.com/rajeshwarpatlolla/ionic-datepicker/issues/112),
-[Bug#114](https://github.com/rajeshwarpatlolla/ionic-datepicker/issues/114),
-[Bug#116](https://github.com/rajeshwarpatlolla/ionic-datepicker/issues/116),
-[Bug#117](https://github.com/rajeshwarpatlolla/ionic-datepicker/issues/117),
-[Bug#120](https://github.com/rajeshwarpatlolla/ionic-datepicker/issues/120),
-[Bug#128](https://github.com/rajeshwarpatlolla/ionic-datepicker/issues/128),
-[Bug#129](https://github.com/rajeshwarpatlolla/ionic-datepicker/issues/129),
-[Bug#133](https://github.com/rajeshwarpatlolla/ionic-datepicker/issues/133),
-[Bug#145](https://github.com/rajeshwarpatlolla/ionic-datepicker/issues/145),
-[Bug#146](https://github.com/rajeshwarpatlolla/ionic-datepicker/issues/146),
-[Bug#151](https://github.com/rajeshwarpatlolla/ionic-datepicker/issues/151),
-[Bug#154](https://github.com/rajeshwarpatlolla/ionic-datepicker/issues/154),
-[Bug#161](https://github.com/rajeshwarpatlolla/ionic-datepicker/issues/161),
-[Bug#163](https://github.com/rajeshwarpatlolla/ionic-datepicker/issues/163),
-[Bug#166](https://github.com/rajeshwarpatlolla/ionic-datepicker/issues/166),
-[Bug#168](https://github.com/rajeshwarpatlolla/ionic-datepicker/issues/168),
-[Bug#171](https://github.com/rajeshwarpatlolla/ionic-datepicker/issues/171)
-
-### 14) v1.1.0
-
-**BugFixes**
-
-[Bug#178](https://github.com/rajeshwarpatlolla/ionic-datepicker/issues/178),
-[Bug#179](https://github.com/rajeshwarpatlolla/ionic-datepicker/issues/179),
-[Bug#180](https://github.com/rajeshwarpatlolla/ionic-datepicker/issues/180)
-
-### 15) v1.2.0
-
-Lots of bug fixes. Lots of PR's merged.
-
-CSS changes for popup, so that all the dates of all the months fits in the specified height.
-
-### 16) v1.2.1
-
-Version modified to match with the current release version.
-
+### 2) v1.5.0
+Synchronization with original project's master as of 27-03-2017.
+Since some bug fixes were added that conflicted with my changes, work again on issues #4 and #5 as
+[Issue#6](https://github.com/OSAMES/ionic-datepicker/issues/6)
 
 ##License:
 [MIT](https://github.com/rajeshwarpatlolla/ionic-datepicker/blob/master/LICENSE.MD "MIT")
 
-##Contact:
+##Contact (fork author):
+https://github.com/OSAMES/ionic-datepicker
+
+##Contact (original author):
 Gmail : rajeshwar.patlolla@gmail.com
 
 Github : https://github.com/rajeshwarpatlolla
