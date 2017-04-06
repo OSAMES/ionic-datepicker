@@ -6,5 +6,4 @@ plugins/
 test/hooks/
 
 # Custom for project
-bower_components/
 bower_dependencies/

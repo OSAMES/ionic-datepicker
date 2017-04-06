@@ -4,26 +4,32 @@ angular.module('starter.controllers', [])
   .controller('mainController', ['$scope', 'ionicDatePicker',
     function ($scope, ionicDatePicker) {
 
-      $scope.options = {
-        start : "sunday",
-        style: "modal",
-        range: "day",
-        today: "not_today",
-        close: "do_not_close"
-      };
+    $scope.options = {
+      start : "sunday",
+      style: "modal",
+      range: "day",
+      today: "not_today",
+      close: "do_not_close"
+    };
 
-      $scope.openDatePicker = function() {
-        var ipObj1 = {
-          callback: function (val) {  //Mandatory
+    $scope.openDatePicker = function() {
+      var ipObj1 = {
+        callback: function (val) {  //Mandatory
+          console.debug("callback called");
+          if(val.start) {
+            $scope.datepicker1 = new Date(val.start) + " - " + new Date(val.end);
+          } else {
             $scope.datepicker1 = new Date(val);
-          },
-          mondayFirst: $scope.options.start == "monday",          //Optional
-          closeOnSelect: $scope.options.close == "close",       //Optional
-          templateType: $scope.options.style,       //Optional
-          selectMode: $scope.options.range, //Optional
-          showTodayButton: $scope.options.today == "today" //Optional
-        };
+          }
 
-        ionicDatePicker.openDatePicker(ipObj1);
+        },
+        mondayFirst: $scope.options.start == "monday",          //Optional
+        closeOnSelect: $scope.options.close == "close",       //Optional
+        templateType: $scope.options.style,       //Optional
+        selectMode: $scope.options.range, //Optional
+        showTodayButton: $scope.options.today == "today" //Optional
       };
+
+      ionicDatePicker.openDatePicker(ipObj1);
+    };
     }]);

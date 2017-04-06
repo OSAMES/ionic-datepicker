@@ -1,16 +1,15 @@
+[![bitHound Score](https://www.bithound.io/github/rajeshwarpatlolla/ionic-datepicker/badges/score.svg)](https://www.bithound.io/github/rajeshwarpatlolla/ionic-datepicker)
+
 ##Introduction:
 
 This is an `ionic-datepicker` bower component, which can be used in any Ionic framework's application. No additional plugins required for this component.
-This plugin is completely open source.
+This plugin is completely open source. Please rate this plugin @ [Ionic Market](http://market.ionic.io/plugins/ionicdatepicker)
 
 From version 1.0.0, this component has got so many new features and the way you should use is different from the older versions of this component. If you wish to see the documentation for the previous versions of this component, please check the [previous releases](https://github.com/rajeshwarpatlolla/ionic-datepicker/releases)
 
-OSAMES' fork intends to add some features, supporting ionic v1 for now.
-OSAMES forked from version 1.2.1, starting with first release as version 1.3.0.
+## For ionic v2, this component is under development. You can check it [here](https://github.com/rajeshwarpatlolla/ionic2-datepicker)
 
-## For ionic v2, this component is under development by the original author. You can check it [here](https://github.com/rajeshwarpatlolla/ionic2-datepicker)
-
-[View original author's Demo](http://rajeshwarpatlolla.github.io/DatePickerForIonicFramework/demo/ "Demo")
+[View Demo](http://rajeshwarpatlolla.github.io/DatePickerForIonicFramework/demo/ "Demo")
 
 ##Prerequisites.
 
@@ -69,7 +68,7 @@ Your config method may look like this if you wish to setup the configuration. Bu
     ionicDatePickerProvider.configDatePicker(datePickerObj);
   })
 ````
-In the above code i am not configuring all the properties, but you can configure as many properties as you can.
+In the above code I am not configuring all the properties, but you can configure as many properties as you can.
 
 The properties you can configure are as follows.
 
@@ -129,7 +128,7 @@ The properties you can configure are as follows.
 
 **p) disableWeekdays**(Optional) : Accepts array of numbers starting from 0(Sunday) to 6(Saturday). If you specify any values for this array, then it will disable that week day in the whole calendar. For example if you pass [0,6], then all the Sundays and Saturdays will be disabled.
 
-**q) selectMode**(Optional): This is a string type which takes two values i.e. `day`, `week` or `month`. Default value is `day`. If you wish the whole week to be selected rather than the day, and the first day of week to be the datepicker's value, set it to `week`.
+**q) selectMode**(Optional): This is a string type which takes three values i.e. `day`, `week` or `month`. Default value is `day`. If you wish the whole week to be selected rather than the day, and the first day of week to be the datepicker's value, set it to `week`.
 
 5) Inject `ionicDatePicker` in the controller, where you wish to use this component. Then using the below method you can call the datepicker.
 
@@ -139,6 +138,7 @@ The properties you can configure are as follows.
     var ipObj1 = {
       callback: function (val) {  //Mandatory
         console.log('Return value from the datepicker popup is : ' + val, new Date(val));
+        // Note: when selectMode is 'week' or 'month', the returned object has "start" and "end" keys with the start and end times.
       },
       disabledDates: [            //Optional
         new Date(2016, 2, 16),
@@ -167,7 +167,7 @@ The properties you can configure are as follows.
 
 Apart from the config method, you can re configure all options in the controller also. If you again set any of the properties, they will be overridden by the values mentioned in the controller. This will be useful if there are multiple date pickers in the app, which has different properties.
 
-In all the above steps the only mandatory thing is the `callback` where you will get the selected date value.
+In all the above steps the only mandatory thing is the `callback` where you will get the selected date value or period start and end values.
 
 
 ##Screen Shots:
@@ -362,18 +362,6 @@ CSS changes for popup, so that all the dates of all the months fits in the speci
 
 Version modified to match with the current release version.
 
-### 17) v1.3.0
-
-On the fork, added ability to select a week.
-
-### 18) v1.3.1
-
-Added ability to select a month.
-
-### 19) v1.4.0
-
-[Bug#297](https://github.com/OSAMES/ionic-datepicker/issues/4)
-[Bug#300](https://github.com/OSAMES/ionic-datepicker/issues/5)
 
 ##License:
 [MIT](https://github.com/rajeshwarpatlolla/ionic-datepicker/blob/master/LICENSE.MD "MIT")
