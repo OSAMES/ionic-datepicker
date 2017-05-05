@@ -2,18 +2,17 @@
 
 ##Introduction:
 
-This is an `ionic-datepicker` bower component, which can be used in any Ionic framework's application. No additional plugins required for this component.
+This is an Ionic date picker, but also week and month picker, as a bower component, which can be used in any Ionic framework's application. No additional plugins required for this component.
 This plugin is completely open source. 
 
 OSAMES' fork intends to add some features, supporting ionic v1 for now.
+Indeed, the original author wasn't interested by our addition of week and month picking.
 Hence the bower package name `ionic-datepicker-fork-ionic1`.
 OSAMES forked from version 1.2.1, starting with first release as version 1.3.0.
 
 
 ## For ionic v2, this component is under development by the original author. 
 You can check it [here](https://github.com/rajeshwarpatlolla/ionic2-datepicker)
-
-[View original author's Demo](http://rajeshwarpatlolla.github.io/DatePickerForIonicFramework/demo/ "Demo")
 
 ##Prerequisites.
 
@@ -188,6 +187,9 @@ The first screen shot shows the popup and the second shows the modal of this plu
 <img src="https://lh3.googleusercontent.com/iMB88WThVW9om9EwFTaXprMWCXjbm9dm5A9aGjC497seWtX37rjzxynRrnVRYgXN9ORy5gjzhKilgdlt-eB53cXIAovFgqicuJ4UXn-HkLNZflkenUM6_k-sbK-GkNCzCfB1rd3wD5m0zgJ5dhJ3CniDUNKygQbo5f4W7JldSz93nVzdOb3OLqgcmZFeSY-FeWdovQi6zYttUPOaem5_47vF2ikt-ZW6H5UL0FI4WGcJSeAdu7wNsdoE5KY_oQfBTpsbl24eUrTxYPXhoNpcUNxRXjGnF31tDWD-jTEOJZZ9lqTnEK3OZ0g4Rci5jeq_wDmOfT0A11HXICbyL9asAPvB6TNrcOWj_qGUIrJtPeiaRDDgk8GYM2gVBY23xiOW3K5lERIfn6HTSNsZCbQciV0oFBROL3wHNuNGA-3mot_jP9ZJgyHz7f0VrWg5fytot3nDB2Gp4bMWsjXk-VOWoCP3lHc75vOvhOZb1ybemB95JI0RiYCdJMaytjzFWPsS5i3J1yEk0FS4PMyH1HEhYPPB48Et9ullJodL9nxDLvpTxJYzf8yqwC_V-pic-WHNgm9f=w382-h678-no" width="360" height="640" />
 <img src="https://lh3.googleusercontent.com/GzTwRh3IHzF9UieGIJTbQwTIosA101q32OSXEcgDFj7GdG7vHvs9Vj5DpWLj0HOny-zqM6zNRdqAkWlgZv_CnpqLEZNX9EP86xFkknkdtFczd6_63XmlsPgbCiArWAqtVpzjZuhfxPujbm_b52hfyAEBBvNOTrd7VcHmVsZYiwoqVggRYyaOxvEobVxTOF7eB0iXiNIBSnOIFcwla8y9nDFJp2ilgBiMCuI7gEuVW95axHlouFOhyOBILG1u-tO28oLXvqxBnWbZDjjciaKJtB8xBZLH5TsIxyH477dMjTr6SYaykZA1tBHHFlgM9AwrWsnCmaPyP1hNIanCEeuemy9Stt5_2Y5u3el7AwUqGQ7C2ZSYs9nJ0ezHhfTJnF7bpONNWVhHE3G6XpuwKOStUdTli70_mWV8Hx_Ennwdh5FrnjLTnltUve4VCtv3sWNxBxN9_rcwymLneeWIB8X1y8E_ulzxQcMG6YJ3Cf-1WrMRTOR-3SQBgm4R0MQjSau1hgYie6u35dIb0h2FirT540xs4EvUWzT8w4Pv6r9Cze5EsgSHAK54F1In8SG8VtBUCQj4=w382-h678-no" width="360" height="640" />
 
+### Week and month selection :
+
+TODO ADD MY SCREENSHOTS
 
 ##CSS Classes:
 
@@ -236,7 +238,7 @@ First releases of fork: added ability to select a week or month in addition to s
 [Issue#4](https://github.com/OSAMES/ionic-datepicker/issues/4)
 [Issue#5](https://github.com/OSAMES/ionic-datepicker/issues/5)
 
-### 2) v1.5.0
+### 3) v1.5.0
 Synchronization with original project's master as of 27-03-2017.
 Since some bug fixes were added that conflicted with my changes, work again on issues #4 and #5 as
 [Issue#6](https://github.com/OSAMES/ionic-datepicker/issues/6)
@@ -248,14 +250,4 @@ Since some bug fixes were added that conflicted with my changes, work again on i
 https://github.com/OSAMES/ionic-datepicker
 
 ##Contact (original author):
-Gmail : rajeshwar.patlolla@gmail.com
-
 Github : https://github.com/rajeshwarpatlolla
-
-Twitter : https://twitter.com/rajeshwar_9032
-
-Facebook : https://www.facebook.com/rajeshwarpatlolla
-
-Paypal : rajeshwar.patlolla@gmail.com
-
-Comment or Rate it : http://market.ionic.io/plugins/ionicdatepicker
