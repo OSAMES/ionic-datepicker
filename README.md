@@ -7,11 +7,15 @@ This plugin is completely open source.
 
 OSAMES' fork intends to add some features, supporting ionic v1 for now.
 Indeed, the original author wasn't interested by our addition of week and month picking.
+
 Hence the bower package name `ionic-datepicker-fork-ionic1`.
+But the angular module name remains `ionic-datepicker`.
+
 OSAMES forked from version 1.2.1, starting with first release as version 1.3.0.
 
 
-## For ionic v2, this component is under development by the original author. 
+##Remark
+For ionic v2, this component is under development by the original author. 
 You can check it [here](https://github.com/rajeshwarpatlolla/ionic2-datepicker)
 
 ##Prerequisites.
@@ -131,7 +135,10 @@ The properties you can configure are as follows.
 
 **p) disableWeekdays**(Optional) : Accepts array of numbers starting from 0(Sunday) to 6(Saturday). If you specify any values for this array, then it will disable that week day in the whole calendar. For example if you pass [0,6], then all the Sundays and Saturdays will be disabled.
 
-**q) selectMode**(Optional): This is a string type which takes three values i.e. `day`, `week` or `month`. Default value is `day`. If you wish the whole week to be selected rather than the day, and the first day of week to be the datepicker's value, set it to `week`.
+**q) selectMode**(Optional): This is a string type which takes three values i.e. `day`, `week` or `month`. Default value is `day`. 
+If you wish the whole week to be selected rather than the day, and the first day of week to be the datepicker's value, set it to `week`.
+If you wish the whole month to be selected rather than the day, and the first day of month to be the datepicker's value, set it to `month`.
+Note: in `week` or `month` mode, the callback doesn't get the same return value from date picker.
 
 5) Inject `ionicDatePicker` in the controller, where you wish to use this component. Then using the below method you can call the datepicker.
 
@@ -189,7 +196,10 @@ The first screen shot shows the popup and the second shows the modal of this plu
 
 ### Week and month selection :
 
-TODO ADD MY SCREENSHOTS
+<img src="screenshots/week_selection_modal" width="576" height="286">
+<img src="screenshots/week_selection_popup" width="253" height="368">
+<img src="screenshots/month_selection_modal" width="576" height="286">
+<img src="screenshots/month_selection_popup" width="253" height="367">
 
 ##CSS Classes:
 
