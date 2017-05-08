@@ -196,10 +196,10 @@ The first screen shot shows the popup and the second shows the modal of this plu
 
 ### Week and month selection :
 
-<img src="screenshots/week_selection_modal" width="576" height="286">
-<img src="screenshots/week_selection_popup" width="253" height="368">
-<img src="screenshots/month_selection_modal" width="576" height="286">
-<img src="screenshots/month_selection_popup" width="253" height="367">
+<img src="screenshots/week_selection_modal.png" width="576" height="286">
+<img src="screenshots/week_selection_popup.png" width="253" height="368">
+<img src="screenshots/month_selection_modal.png" width="576" height="286">
+<img src="screenshots/month_selection_popup.png" width="253" height="367">
 
 ##CSS Classes:
 
