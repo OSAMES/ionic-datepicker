@@ -1,7 +1,7 @@
 {
   "name": "ionic-datepicker-fork-ionic1",
-  "version": "1.4.0",
-  "description": "A date picker for ionic framework, forked",
+  "version": "1.5.0",
+  "description": "A date picker for ionic framework, but also week picker and month picker",
   "main": "./dist/ionic-datepicker.bundle.min.js",
   "scripts": {},
   "author": "https://github.com/rajeshwarpatlolla, rajeshwar.patlolla@gmail.com",
