@@ -295,8 +295,29 @@ angular.module('ionic-datepicker.provider', [])
         }
         setInitialObj($scope.mainObj);
 
-        if (!$scope.mainObj.closeOnSelect) {
           buttons = [{
+              text: $scope.mainObj.closeLabel,
+              type: 'button_close',
+              onTap: function (e) {
+                  console.log('ionic-datepicker popup closed.');
+              }
+          }];
+
+          if ($scope.mainObj.showTodayButton) {
+              buttons.push({
+                  text: $scope.mainObj.todayLabel,
+                  type: 'button_today',
+                  onTap: function (e) {
+                      var today = resetHMSM(new Date());
+                      $scope.adjustSelctedDateEpoch(today, true);
+                      refreshDateList(today);
+                      e.preventDefault();
+                  }
+              });
+          }
+
+        if (!$scope.mainObj.closeOnSelect) {
+          buttons.push({
             text: $scope.mainObj.setLabel,
             type: 'button_set',
             onTap: function (e) {
@@ -304,29 +325,8 @@ angular.module('ionic-datepicker.provider', [])
                     ? $scope.selctedDateEpoch
                     : { start: $scope.selctedDateEpoch, end: $scope.selctedDateEpochEndWeek });
             }
-          }];
-        }
-
-        if ($scope.mainObj.showTodayButton) {
-          buttons.push({
-            text: $scope.mainObj.todayLabel,
-            type: 'button_today',
-            onTap: function (e) {
-              var today = resetHMSM(new Date());
-              $scope.adjustSelctedDateEpoch(today, true);
-              refreshDateList(today);
-              e.preventDefault();
-            }
           });
         }
-
-        buttons.push({
-          text: $scope.mainObj.closeLabel,
-          type: 'button_close',
-          onTap: function (e) {
-            console.log('ionic-datepicker popup closed.');
-          }
-        });
 
         if ($scope.mainObj.templateType.toLowerCase() == 'popup') {
           $scope.popup = $ionicPopup.show({

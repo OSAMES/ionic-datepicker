@@ -255,6 +255,9 @@ Synchronization with original project's master as of 27-03-2017.
 Since some bug fixes were added that conflicted with my changes, work again on issues #4 and #5 as
 [Issue#6](https://github.com/OSAMES/ionic-datepicker/issues/6)
 
+### 4) v1.5.1
+Swapped "Set" and "Close" buttons position, from user suggestion.
+
 ##License:
 [MIT](https://github.com/rajeshwarpatlolla/ionic-datepicker/blob/master/LICENSE.MD "MIT")
 
