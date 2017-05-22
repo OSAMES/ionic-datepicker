@@ -49,10 +49,6 @@
 
         <div id="options">
           <div class="row">
-            <div class="col100">Dates: From 2012-01-01 to 2018-12-31.
-            </div>
-          </div>
-          <div class="row">
             <div class="col25">OPTIONS
             </div>
             <div class="col25">Start:
@@ -91,11 +87,22 @@
               </div>
             </div>
             <div class="col25">Close on select:
+            <div class="row">
+              <input type="radio" name="close" value="close" ng-model="options.close">Yes
+            </div>
+            <div class="row">
+              <input type="radio" name="close" value="do_not_close" ng-model="options.close">No
+            </div>
+          </div>
+            <div class="col25">Disable dates:
               <div class="row">
-                <input type="radio" name="close" value="close" ng-model="options.close">Yes
+                <input type="radio" name="disableDates" value="none" ng-model="options.disableDates">None
               </div>
               <div class="row">
-                <input type="radio" name="close" value="do_not_close" ng-model="options.close">No
+                <input type="radio" name="disableDates" value="year" ng-model="options.disableDates">Enable from 01-01-2012 to 12-31-2018
+              </div>
+              <div class="row">
+                <input type="radio" name="disableDates" value="special" ng-model="options.disableDates">Enable from 03-12-2017 to 10-18-2017
               </div>
             </div>
           </div>
