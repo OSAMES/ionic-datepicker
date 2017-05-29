@@ -9,7 +9,8 @@ angular.module('starter.controllers', [])
       style: "modal",
       range: "day",
       today: "not_today",
-      close: "do_not_close"
+      close: "do_not_close",
+      disableDates: "none"
     };
 
     $scope.openDatePicker = function() {
@@ -27,10 +28,20 @@ angular.module('starter.controllers', [])
         closeOnSelect: $scope.options.close == "close",       //Optional
         templateType: $scope.options.style,       //Optional
         selectMode: $scope.options.range, //Optional
-        showTodayButton: $scope.options.today == "today", //Optional
-        from: new Date(2012, 0, 1), //Optional
-        to: new Date(2018, 11, 31) //Optional
+        showTodayButton: $scope.options.today == "today" //Optional
       };
+
+      if($scope.options.disableDates == "none") {
+        ipObj1.from = null;
+        ipObj1.to = null;
+      } else if($scope.options.disableDates == "year") {
+        ipObj1.from = new Date(2012, 0, 1);
+        ipObj1.to = new Date(2018, 11, 31);
+      } else {
+        // from 03-12-2017 to 10-18-2017
+        ipObj1.from = new Date(2017, 2, 12);
+        ipObj1.to = new Date(2017, 9, 18);
+      }
 
       ionicDatePicker.openDatePicker(ipObj1);
     };
