@@ -37,6 +37,10 @@ angular.module('starter.controllers', [])
       } else if($scope.options.disableDates == "year") {
         ipObj1.from = new Date(2012, 0, 1);
         ipObj1.to = new Date(2018, 11, 31);
+      } else if($scope.options.disableDates == "month") {
+        // from 03-01-2017 to 08-31-2017
+        ipObj1.from = new Date(2017, 2, 1);
+        ipObj1.to = new Date(2017, 7, 31);
       } else {
         // from 03-12-2017 to 10-18-2017
         ipObj1.from = new Date(2017, 2, 12);
