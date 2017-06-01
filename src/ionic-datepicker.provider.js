@@ -186,11 +186,14 @@ angular.module('ionic-datepicker.provider', [])
         var lastDay = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate();
 
         $scope.monthsList = [];
+        console.info("config ", $scope.mainObj.monthsList);
         if ($scope.mainObj.monthsList && $scope.mainObj.monthsList.length === 12) {
           $scope.monthsList = $scope.mainObj.monthsList;
         } else {
-          $scope.monthsList = IonicDatepickerService.monthsList;
+          $scope.monthsList = IonicDatepickerService.getMonthsList($scope.mainObj.from, $scope.mainObj.to);
         }
+
+        console.info("months list ", $scope.monthsList);
 
         $scope.yearsList = IonicDatepickerService.getYearsList($scope.mainObj.from, $scope.mainObj.to);
 

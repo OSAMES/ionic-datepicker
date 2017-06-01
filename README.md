@@ -246,7 +246,6 @@ First releases of fork: added ability to select a week or month in addition to s
 [Issue#2](https://github.com/OSAMES/ionic-datepicker/issues/2)
 
 ### 2) v1.4.0
-
 [Issue#4](https://github.com/OSAMES/ionic-datepicker/issues/4)
 [Issue#5](https://github.com/OSAMES/ionic-datepicker/issues/5)
 
@@ -257,6 +256,9 @@ Since some bug fixes were added that conflicted with my changes, work again on i
 
 ### 4) v1.5.1
 Swapped "Set" and "Close" buttons position, from user suggestion.
+
+### 5) v1.6.0
+[Issue#7](https://github.com/OSAMES/ionic-datepicker/issues/7)
 
 ##License:
 [MIT](https://github.com/rajeshwarpatlolla/ionic-datepicker/blob/master/LICENSE.MD "MIT")

@@ -18,4 +18,19 @@ angular.module('ionic-datepicker.service', [])
 
       return yearsList;
     };
+
+  this.getMonthsList = function (from, to) {
+      var monthsList = [];
+      var minMonth = 0;
+      var maxMonth = 11;
+
+      minMonth = from ? new Date(from).getMonth() : minMonth;
+      maxMonth = to ? new Date(to).getMonth() : maxMonth;
+
+      for (var i = minMonth; i <= maxMonth; i++) {
+          monthsList.push(i);
+      }
+
+      return monthsList;
+  };
   });
