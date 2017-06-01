@@ -54,7 +54,11 @@ angular.module('ionic-datepicker.provider', [])
             || (newDate.getFullYear() == fromDateTmp.getFullYear() && newDate.getMonth() < fromDateTmp.getMonth()))
             return;
 
-        // TODO add a case for equal year, equal month, smaller day: return
+        if((newDate.getFullYear() == fromDateTmp.getFullYear() && newDate.getMonth() == fromDateTmp.getMonth())) {
+            if(newDate.getDate() < fromDateTmp.getDate()) {
+                newDate.setDate(fromDateTmp.getDate());
+            }
+        }
 
         $scope.currentDate = newDate;
         $scope.data.currentMonth = $scope.mainObj.monthsList[$scope.currentDate.getMonth()];
@@ -77,7 +81,11 @@ angular.module('ionic-datepicker.provider', [])
             || (newDate.getFullYear() == toDateTmp.getFullYear() && newDate.getMonth() > toDateTmp.getMonth()))
             return;
 
-          // TODO add a case for equal year, equal month, greater day: return
+        if((newDate.getFullYear() == toDateTmp.getFullYear() && newDate.getMonth() == toDateTmp.getMonth())) {
+            if(newDate.getDate() > toDateTmp.getDate()) {
+                newDate.setDate(toDateTmp.getDate());
+            }
+        }
 
         $scope.currentDate = newDate;
         $scope.data.currentMonth = $scope.mainObj.monthsList[$scope.currentDate.getMonth()];
