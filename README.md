@@ -258,6 +258,7 @@ Since some bug fixes were added that conflicted with my changes, work again on i
 Swapped "Set" and "Close" buttons position, from user suggestion.
 
 ### 5) v1.6.0
+Fixed correct limitation of pickable day with any "from"/"to" dates configuration.
 [Issue#7](https://github.com/OSAMES/ionic-datepicker/issues/7)
 
 ##License:
