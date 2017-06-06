@@ -18,7 +18,8 @@ angular.module('ionic-datepicker.service', [])
     };
 
     // 12 items, not available months are null
-    this.getMonthsList = function (from, to) {
+    // item has "value" and "text" json keys
+    this.getMonthsList = function (monthNames, from, to) {
       var monthsList = [];
       var minMonth = 0;
       var maxMonth = 11;
@@ -27,9 +28,10 @@ angular.module('ionic-datepicker.service', [])
       maxMonth = to ? new Date(to).getMonth() : maxMonth;
 
       for (var i = 0; i <= 11; i++) {
-          monthsList.push(i < minMonth || i > maxMonth ? null : i);
+          if (i >= minMonth && i <= maxMonth) {
+              monthsList.push({value: i, text: monthNames[i]});
+          }
       }
-
       return monthsList;
     };
 
