@@ -17,7 +17,6 @@
               <label class="item item-input item-select month_select">
                 <span class="input-label">&nbsp;</span>
                 <select ng-model="data.currentMonth" ng-options="select as item.text for item in monthsList track by item.value" ng-change="monthChanged(data.currentMonth)">
-                  <!--<option ng-repeat="month in monthsList | filter:{'!!'}" ng-selected="month == data.currentMonthSelected" value="{{month}}">-->
                     {{month}}
                   </option>
                 </select>

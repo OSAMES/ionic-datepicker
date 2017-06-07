@@ -17,7 +17,6 @@ angular.module('ionic-datepicker.service', [])
       return yearsList;
     };
 
-    // 12 items, not available months are null
     // item has "value" and "text" json keys
     this.getMonthsList = function (monthNames, from, to) {
       var monthsList = [];

@@ -61,7 +61,7 @@ angular.module('ionic-datepicker.provider', [])
         }
 
         $scope.currentDate = newDate;
-        $scope.data.currentMonth = $scope.monthsNames[$scope.currentDate.getMonth()];
+        $scope.data.currentMonth = findMonth($scope.currentDate.getMonth(), $scope.monthsList);
         $scope.data.currentYear = $scope.currentDate.getFullYear();
         $scope.adjustSelctedDateEpoch($scope.currentDate, true);
         refreshDateList($scope.currentDate);
@@ -88,10 +88,19 @@ angular.module('ionic-datepicker.provider', [])
         }
 
         $scope.currentDate = newDate;
-        $scope.data.currentMonth = $scope.monthsNames[$scope.currentDate.getMonth()];
+        $scope.data.currentMonth = findMonth($scope.currentDate.getMonth(), $scope.monthsList);
         $scope.data.currentYear = $scope.currentDate.getFullYear();
         $scope.adjustSelctedDateEpoch($scope.currentDate, true);
         refreshDateList($scope.currentDate);
+      };
+
+      var findMonth = function(monthId, scopeMonthList) {
+        for(var i = 0; i < scopeMonthList.length; i++) {
+            if(scopeMonthList[i].value === monthId) {
+                return scopeMonthList[i];
+            }
+        }
+        return scopeMonthList[0];
       };
 
         //Get the acceptable day
@@ -223,7 +232,7 @@ angular.module('ionic-datepicker.provider', [])
         $scope.rows = [0, 7, 14, 21, 28, 35];
         $scope.cols = [0, 1, 2, 3, 4, 5, 6];
 
-        $scope.data.currentMonth = $scope.monthsNames[currentDate.getMonth()];
+        $scope.data.currentMonth = findMonth($scope.currentDate.getMonth(), $scope.monthsList);
         $scope.data.currentYear = currentDate.getFullYear();
         $scope.data.currentMonthSelected = angular.copy($scope.data.currentMonth);
         $scope.currentYearSelected = angular.copy($scope.data.currentYear);
@@ -232,7 +241,7 @@ angular.module('ionic-datepicker.provider', [])
 
       //Month changed
       $scope.monthChanged = function (month) {
-        var monthNumber = $scope.monthsNames.indexOf(month);
+        var monthNumber = month;
         var selectedDate = new Date($scope.selctedDateEpoch);
         var newDay = getAcceptableDay(selectedDate.getDate(),
             monthNumber,
