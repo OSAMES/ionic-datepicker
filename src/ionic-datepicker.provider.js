@@ -96,9 +96,9 @@ angular.module('ionic-datepicker.provider', [])
 
       var findMonth = function(monthId, scopeMonthList) {
         for(var i = 0; i < scopeMonthList.length; i++) {
-            if(scopeMonthList[i].value === monthId) {
-                return scopeMonthList[i];
-            }
+          if(scopeMonthList[i].value === monthId) {
+            return scopeMonthList[i];
+          }
         }
         return scopeMonthList[0];
       };
@@ -240,8 +240,9 @@ angular.module('ionic-datepicker.provider', [])
       }
 
       //Month changed
-      $scope.monthChanged = function (month) {
-        var monthNumber = month;
+      $scope.monthChanged = function () {
+        console.warn("scope: ", $scope);
+        var monthNumber = $scope.currentMonthSelected.value;
         var selectedDate = new Date($scope.selctedDateEpoch);
         var newDay = getAcceptableDay(selectedDate.getDate(),
             monthNumber,
