@@ -240,10 +240,7 @@ angular.module('ionic-datepicker.provider', [])
       }
 
       //Month changed
-      $scope.monthChanged = function (currentMonth) {
-        console.warn("scope: ", $scope);
-          console.warn("currentMonth: ", currentMonth);
-        var monthNumber = currentMonth.value;
+      $scope.monthChanged = function (monthNumber) {
         var selectedDate = new Date($scope.selctedDateEpoch);
         var newDay = getAcceptableDay(selectedDate.getDate(),
             monthNumber,

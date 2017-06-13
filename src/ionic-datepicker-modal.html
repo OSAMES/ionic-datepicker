@@ -16,8 +16,7 @@
             <div class="col col-50 padding_right_5px">
               <label class="item item-input item-select month_select">
                 <span class="input-label">&nbsp;</span>
-                <select ng-model="data.currentMonth" ng-options="select as item.text for item in monthsList track by item.value" ng-change="monthChanged(data.currentMonth)">
-                    {{month}}
+                <select ng-model="data.currentMonth" ng-options="item.text for item in monthsList" ng-change="monthChanged(data.currentMonth.value)">
                 </select>
               </label>
             </div>
