@@ -41,10 +41,14 @@ angular.module('starter.controllers', [])
         // from 03-01-2017 to 08-31-2017
         ipObj1.from = new Date(2017, 2, 1);
         ipObj1.to = new Date(2017, 7, 31);
-      } else {
+      } else if($scope.options.disableDates == "special") {
         // from 03-12-2017 to 10-18-2017
         ipObj1.from = new Date(2017, 2, 12);
         ipObj1.to = new Date(2017, 9, 18);
+      } else if($scope.options.disableDates == "special2") {
+        // from 03-12-2017 to 10-18-2018
+        ipObj1.from = new Date(2017, 2, 12);
+        ipObj1.to = new Date(2018, 9, 18);
       }
 
       ionicDatePicker.openDatePicker(ipObj1);

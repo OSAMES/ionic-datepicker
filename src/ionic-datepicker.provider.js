@@ -245,19 +245,68 @@ angular.module('ionic-datepicker.provider', [])
         var newDay = getAcceptableDay(selectedDate.getDate(),
             monthNumber,
             selectedDate.getFullYear());
-        $scope.currentDate = resetHMSM(new Date($scope.currentDate.getFullYear(), monthNumber, newDay));
+
+          var newDate = resetHMSM(new Date($scope.currentDate.getFullYear(), monthNumber, newDay));
+
+          var toDateTmp = new Date($scope.toDate);
+          if (newDate.getFullYear() > toDateTmp.getFullYear()
+              || (newDate.getFullYear() == toDateTmp.getFullYear() && newDate.getMonth() > toDateTmp.getMonth()))
+              return;
+
+          if((newDate.getFullYear() == toDateTmp.getFullYear() && newDate.getMonth() == toDateTmp.getMonth())) {
+              if(newDate.getDate() > toDateTmp.getDate()) {
+                  newDate.setDate(toDateTmp.getDate());
+              }
+          }
+
+          var fromDateTmp = new Date($scope.fromDate);
+          if (newDate.getFullYear() < fromDateTmp.getFullYear()
+              || (newDate.getFullYear() == fromDateTmp.getFullYear() && newDate.getMonth() < fromDateTmp.getMonth()))
+              return;
+
+          if((newDate.getFullYear() == fromDateTmp.getFullYear() && newDate.getMonth() == fromDateTmp.getMonth())) {
+              if(newDate.getDate() < fromDateTmp.getDate()) {
+                  newDate.setDate(fromDateTmp.getDate());
+              }
+          }
+
+        $scope.currentDate = newDate;
         $scope.adjustSelctedDateEpoch($scope.currentDate, true);
         refreshDateList($scope.currentDate);
       };
 
       //Year changed
       $scope.yearChanged = function (year) {
-        var selectedDate = new Date($scope.selctedDateEpoch);
-        var newDay = getAcceptableDay(selectedDate.getDate(),
+         var selectedDate = new Date($scope.selctedDateEpoch);
+         var newDay = getAcceptableDay(selectedDate.getDate(),
             selectedDate.getMonth(),
             year);
-        $scope.currentDate = resetHMSM(new Date(year, $scope.currentDate.getMonth(), newDay));
-        $scope.adjustSelctedDateEpoch($scope.currentDate, true);
+
+         var newDate = resetHMSM(new Date(year, $scope.currentDate.getMonth(), newDay));
+
+         var toDateTmp = new Date($scope.toDate);
+         if (newDate.getFullYear() > toDateTmp.getFullYear()
+             || (newDate.getFullYear() == toDateTmp.getFullYear() && newDate.getMonth() > toDateTmp.getMonth()))
+             return;
+
+         if((newDate.getFullYear() == toDateTmp.getFullYear() && newDate.getMonth() == toDateTmp.getMonth())) {
+              if(newDate.getDate() > toDateTmp.getDate()) {
+                  newDate.setDate(toDateTmp.getDate());
+              }
+         }
+
+          var fromDateTmp = new Date($scope.fromDate);
+          if (newDate.getFullYear() < fromDateTmp.getFullYear()
+              || (newDate.getFullYear() == fromDateTmp.getFullYear() && newDate.getMonth() < fromDateTmp.getMonth()))
+              return;
+
+          if((newDate.getFullYear() == fromDateTmp.getFullYear() && newDate.getMonth() == fromDateTmp.getMonth())) {
+              if(newDate.getDate() < fromDateTmp.getDate()) {
+                  newDate.setDate(fromDateTmp.getDate());
+              }
+          }
+
+          $scope.currentDate = newDate;$scope.adjustSelctedDateEpoch($scope.currentDate, true);
         refreshDateList($scope.currentDate);
       };
 
