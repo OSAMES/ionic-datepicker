@@ -198,7 +198,8 @@ angular.module('ionic-datepicker.provider', [])
         $scope.monthsNames = IonicDatepickerService.getMonthsNames($scope.mainObj.monthsList);
 
         // available months
-        $scope.monthsList = IonicDatepickerService.getMonthsList($scope.monthsNames, $scope.mainObj.from, $scope.mainObj.to, currentDate.getFullYear());
+        $scope.monthsList = {};
+        $scope.monthsList.months = IonicDatepickerService.getMonthsList($scope.monthsNames, $scope.mainObj.from, $scope.mainObj.to, currentDate.getFullYear());
         $scope.yearsList = IonicDatepickerService.getYearsList($scope.mainObj.from, $scope.mainObj.to, currentDate.getFullYear());
 
         $scope.dayList = [];
@@ -232,7 +233,7 @@ angular.module('ionic-datepicker.provider', [])
         $scope.rows = [0, 7, 14, 21, 28, 35];
         $scope.cols = [0, 1, 2, 3, 4, 5, 6];
 
-        $scope.data.currentMonth = findMonth($scope.currentDate.getMonth(), $scope.monthsList);
+        $scope.data.currentMonth = findMonth($scope.currentDate.getMonth(), $scope.monthsList.months);
         $scope.data.currentYear = currentDate.getFullYear();
         $scope.data.currentMonthSelected = angular.copy($scope.data.currentMonth);
         $scope.currentYearSelected = angular.copy($scope.data.currentYear);
