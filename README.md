@@ -263,7 +263,7 @@ A big thank you to Faustino Gagneten for requesting this implementation because 
 [Issue#7](https://github.com/OSAMES/ionic-datepicker/issues/7)
 
 ##License:
-[MIT](https://github.com/rajeshwarpatlolla/ionic-datepicker/blob/master/LICENSE.MD "MIT")
+[MIT](https://github.com/OSAMES/ionic-datepicker/blob/master/LICENSE.MD "MIT")
 
 ##Contact (fork author):
 https://github.com/OSAMES/ionic-datepicker
