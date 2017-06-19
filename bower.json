@@ -7,13 +7,7 @@
   ],
   "description": "A date picker for ionic framework, but also week picker and month picker",
   "main": [
-    "./src/ionic-datepicker.module.js",
-    "./src/ionic-datepicker.service.js",
-    "./src/ionic-datepicker.provider.js",
-    "./src/ionic-datepicker-modal.html",
-    "./src/ionic-datepicker-popup.html",
-    "./src/scss/ionic-datepicker.styles.scss",
-    "./src/scss/variables.scss"
+    "./src/ionic-datepicker.module.js"
   ],
   "keywords": [
     "ionic-datepicker",
