@@ -1,6 +1,6 @@
 {
   "name": "ionic-datepicker-fork-ionic1",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "authors": [
     "rajeshwarpatlolla <rajeshwar.patlolla@gmail.com>",
     "OSAMES (https://github.com/OSAMES/)"
@@ -26,6 +26,6 @@
     "tests"
   ],
   "dependencies": {
-    "ionic": "^1"
+    "ionic": ">0.9.27"
   }
 }
