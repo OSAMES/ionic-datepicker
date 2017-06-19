@@ -1,13 +1,19 @@
 {
   "name": "ionic-datepicker-fork-ionic1",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "authors": [
     "rajeshwarpatlolla <rajeshwar.patlolla@gmail.com>",
     "OSAMES (https://github.com/OSAMES/)"
   ],
   "description": "A date picker for ionic framework, but also week picker and month picker",
   "main": [
-    "./dist/ionic-datepicker.bundle.min.js"
+    "./src/ionic-datepicker.module.js",
+    "./src/ionic-datepicker.service.js",
+    "./src/ionic-datepicker.provider.js",
+    "./src/ionic-datepicker-modal.html",
+    "./src/ionic-datepicker-popup.html",
+    "./src/scss/ionic-datepicker.styles.scss",
+    "./src/scss/variables.scss"
   ],
   "keywords": [
     "ionic-datepicker",
