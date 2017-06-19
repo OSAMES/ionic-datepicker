@@ -288,7 +288,14 @@ angular.module('ionic-datepicker.provider', [])
          var toDateTmp = new Date($scope.toDate);
          if (newDate.getFullYear() > toDateTmp.getFullYear()
              || (newDate.getFullYear() == toDateTmp.getFullYear() && newDate.getMonth() > toDateTmp.getMonth()))
+         {
+             // Out of allowed dates
+             newDate = toDateTmp;
+             $scope.currentDate = newDate;
+             $scope.adjustSelctedDateEpoch($scope.currentDate, true);
+             refreshDateList($scope.currentDate);
              return;
+         }
 
          if((newDate.getFullYear() == toDateTmp.getFullYear() && newDate.getMonth() == toDateTmp.getMonth())) {
               if(newDate.getDate() > toDateTmp.getDate()) {
@@ -299,7 +306,14 @@ angular.module('ionic-datepicker.provider', [])
           var fromDateTmp = new Date($scope.fromDate);
           if (newDate.getFullYear() < fromDateTmp.getFullYear()
               || (newDate.getFullYear() == fromDateTmp.getFullYear() && newDate.getMonth() < fromDateTmp.getMonth()))
+          {
+              // Out of allowed dates
+              newDate = fromDateTmp;
+              $scope.currentDate = newDate;
+              $scope.adjustSelctedDateEpoch($scope.currentDate, true);
+              refreshDateList($scope.currentDate);
               return;
+          }
 
           if((newDate.getFullYear() == fromDateTmp.getFullYear() && newDate.getMonth() == fromDateTmp.getMonth())) {
               if(newDate.getDate() < fromDateTmp.getDate()) {
@@ -307,8 +321,9 @@ angular.module('ionic-datepicker.provider', [])
               }
           }
 
-          $scope.currentDate = newDate;$scope.adjustSelctedDateEpoch($scope.currentDate, true);
-        refreshDateList($scope.currentDate);
+          $scope.currentDate = newDate;
+          $scope.adjustSelctedDateEpoch($scope.currentDate, true);
+          refreshDateList($scope.currentDate);
       };
 
       //Setting up the initial object
